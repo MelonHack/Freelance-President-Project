@@ -1,0 +1,936 @@
+[gd_scene load_steps=32 format=3 uid="uid://btckv37tbfete"]
+
+[ext_resource type="Texture2D" uid="uid://bq2y5xe4u5ikc" path="res://randomDownloads/background.jpg" id="1_sugp2"]
+[ext_resource type="Texture2D" uid="uid://blvft68l16r05" path="res://randomDownloads/buttonsSprites/Buttons-shoping-trophy.png" id="2_sugp2"]
+[ext_resource type="Texture2D" uid="uid://cfc0oxiorxsfq" path="res://randomDownloads/buttonsSprites/Buttons-pressed-trophy.png" id="3_jyhfs"]
+[ext_resource type="Script" uid="uid://csireuwb32fqo" path="res://scripts/button_stats_mouse_detection.gd" id="4_choun"]
+[ext_resource type="Texture2D" uid="uid://c1up5ob3lf20l" path="res://randomDownloads/buttonsSprites/Buttons-exclamation.png" id="4_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://b62snvbxpyobd" path="res://randomDownloads/buttonsSprites/Buttons-pressed-exclamation.png" id="5_tefeu"]
+[ext_resource type="Script" uid="uid://cm5xjh46k0xu7" path="res://scripts/button_advancement_mouse_detection.gd" id="7_eb6dy"]
+[ext_resource type="Texture2D" uid="uid://dhxw2jtd8tqap" path="res://randomDownloads/buttonsSprites/Buttons-pause.png" id="8_85g3d"]
+[ext_resource type="Texture2D" uid="uid://dybfgrk6lkmsn" path="res://randomDownloads/buttonsSprites/Buttons-pressed-pause.png" id="9_choun"]
+[ext_resource type="Script" uid="uid://cigkl430f3pwi" path="res://scripts/game_manager.gd" id="11_ya4ey"]
+[ext_resource type="Script" uid="uid://dt5wmhwj4iwkp" path="res://scripts/button_pause_mouse_detection.gd" id="13_a8y0u"]
+[ext_resource type="Texture2D" uid="uid://ccyf5n4ckk0pw" path="res://randomDownloads/notif.png" id="14_jkv2x"]
+[ext_resource type="Script" uid="uid://bivrfnkdmogwx" path="res://scripts/button_bills_mouse_detection.gd" id="15_jbj1t"]
+[ext_resource type="Script" uid="uid://b3t3a26y17hcp" path="res://scripts/ui_advancement.gd" id="15_muem4"]
+[ext_resource type="Script" uid="uid://b0xv1sp883h3g" path="res://scripts/ui_stats.gd" id="16_0ld40"]
+[ext_resource type="Script" uid="uid://c5hkm4wxdh31k" path="res://scripts/ui_pause.gd" id="16_dp3eg"]
+[ext_resource type="Texture2D" uid="uid://b1g4mt4wmi2po" path="res://randomDownloads/MenuBackground.png" id="17_muem4"]
+[ext_resource type="Texture2D" uid="uid://d1xalveeveu2d" path="res://randomDownloads/buttonsSprites/UI_Flat_Button02a_1.png" id="18_dp3eg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6xl0"]
+atlas = ExtResource("4_tbgi4")
+region = Rect2(0, 0, 82, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tipki"]
+atlas = ExtResource("5_tefeu")
+region = Rect2(0, 0, 82, 87)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_85g3d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6xl0")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tipki")
+}],
+"loop": false,
+"name": &"hovered",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ya4ey"]
+size = Vector2(24.5, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbgi4"]
+atlas = ExtResource("2_sugp2")
+region = Rect2(0, 0, 83, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tefeu"]
+atlas = ExtResource("3_jyhfs")
+region = Rect2(0, 0, 83, 88)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o6xl0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbgi4")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tefeu")
+}],
+"loop": false,
+"name": &"hovered",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ya4ey"]
+atlas = ExtResource("8_85g3d")
+region = Rect2(0, 0, 82, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eb6dy"]
+atlas = ExtResource("9_choun")
+region = Rect2(0, 0, 82, 87)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tipki"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ya4ey")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eb6dy")
+}],
+"loop": false,
+"name": &"hovered",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbj1t"]
+atlas = ExtResource("14_jkv2x")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_muem4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jbj1t")
+}],
+"loop": false,
+"name": &"notif",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jkv2x"]
+radius = 11.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="backGround" type="Sprite2D" parent="."]
+position = Vector2(122, 1)
+texture = ExtResource("1_sugp2")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(5, 5)
+
+[node name="buttons" type="Node2D" parent="."]
+
+[node name="button_stats" type="Node2D" parent="buttons"]
+
+[node name="sprite_button_stats" type="AnimatedSprite2D" parent="buttons/button_stats"]
+position = Vector2(228.45, -130.95)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_85g3d")
+autoplay = "default"
+
+[node name="area2D_button_stats" type="Area2D" parent="buttons/button_stats"]
+script = ExtResource("4_choun")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="buttons/button_stats/area2D_button_stats"]
+position = Vector2(228.5, -131)
+shape = SubResource("RectangleShape2D_ya4ey")
+
+[node name="button_advancement" type="Node2D" parent="buttons"]
+
+[node name="sprite_button_advancements" type="AnimatedSprite2D" parent="buttons/button_advancement"]
+position = Vector2(228.45, -100.95)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_o6xl0")
+autoplay = "default"
+
+[node name="area2D_button_advancement" type="Area2D" parent="buttons/button_advancement"]
+script = ExtResource("7_eb6dy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="buttons/button_advancement/area2D_button_advancement"]
+position = Vector2(228, -101)
+shape = SubResource("RectangleShape2D_ya4ey")
+
+[node name="button_pause" type="Node2D" parent="buttons"]
+
+[node name="sprite_button_pause" type="AnimatedSprite2D" parent="buttons/button_pause"]
+position = Vector2(228.45, -70.95)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_tipki")
+autoplay = "default"
+
+[node name="area2D_button_pause" type="Area2D" parent="buttons/button_pause"]
+script = ExtResource("13_a8y0u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="buttons/button_pause/area2D_button_pause"]
+position = Vector2(228.25, -71)
+shape = SubResource("RectangleShape2D_ya4ey")
+
+[node name="button_bills" type="Node2D" parent="buttons"]
+visible = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="buttons/button_bills"]
+position = Vector2(-61.999996, -6.000003)
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_muem4")
+animation = &"notif"
+
+[node name="area2D_button_bills" type="Area2D" parent="buttons/button_bills"]
+script = ExtResource("15_jbj1t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="buttons/button_bills/area2D_button_bills"]
+position = Vector2(-62, -6)
+shape = SubResource("CircleShape2D_jkv2x")
+
+[node name="UI_buttons" type="Node2D" parent="."]
+
+[node name="ui_stats" type="Control" parent="UI_buttons"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -101.0
+offset_top = -112.0
+offset_right = -61.0
+offset_bottom = -72.0
+script = ExtResource("16_0ld40")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UI_buttons/ui_stats"]
+layout_mode = 0
+offset_right = 258.0
+offset_bottom = 184.0
+texture = ExtResource("17_muem4")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="label_environment" type="Label" parent="UI_buttons/ui_stats"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 10.0
+offset_right = 119.0
+offset_bottom = 33.0
+text = "environment"
+
+[node name="label_industry" type="Label" parent="UI_buttons/ui_stats"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 30.0
+offset_right = 83.0
+offset_bottom = 53.0
+text = "industry"
+
+[node name="label_youth" type="Label" parent="UI_buttons/ui_stats"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 51.0
+offset_right = 64.0
+offset_bottom = 74.0
+text = "youth"
+
+[node name="label_approval" type="Label" parent="UI_buttons/ui_stats"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 68.0
+offset_right = 87.0
+offset_bottom = 91.0
+text = "approval"
+
+[node name="label_budget" type="Label" parent="UI_buttons/ui_stats"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 90.0
+offset_right = 73.0
+offset_bottom = 113.0
+text = "budget"
+
+[node name="label_debt" type="Label" parent="UI_buttons/ui_stats"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 108.0
+offset_right = 58.0
+offset_bottom = 131.0
+text = "debt"
+
+[node name="label_security" type="Label" parent="UI_buttons/ui_stats"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 129.0
+offset_right = 80.0
+offset_bottom = 152.0
+text = "security"
+
+[node name="label_terrorRisk" type="Label" parent="UI_buttons/ui_stats"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 148.0
+offset_right = 58.0
+offset_bottom = 171.0
+text = "terro"
+
+[node name="ui_advancement" type="Control" parent="UI_buttons"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -101.0
+offset_top = -112.0
+offset_right = -61.0
+offset_bottom = -72.0
+script = ExtResource("15_muem4")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UI_buttons/ui_advancement"]
+layout_mode = 0
+offset_right = 258.0
+offset_bottom = 184.0
+texture = ExtResource("17_muem4")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Label" type="Label" parent="UI_buttons/ui_advancement"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 8.0
+offset_right = 52.0
+offset_bottom = 31.0
+text = "test"
+
+[node name="ProgressBar" type="ProgressBar" parent="UI_buttons/ui_advancement"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 75.0
+offset_right = 220.0
+offset_bottom = 102.0
+
+[node name="ui_pause" type="Control" parent="UI_buttons"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -101.0
+offset_top = -112.0
+offset_right = -61.0
+offset_bottom = -72.0
+script = ExtResource("16_dp3eg")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UI_buttons/ui_pause"]
+layout_mode = 0
+offset_right = 258.0
+offset_bottom = 184.0
+texture = ExtResource("17_muem4")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="button_resume" type="Button" parent="UI_buttons/ui_pause"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 112.0
+offset_right = 182.0
+offset_bottom = 166.0
+text = "Resume"
+icon = ExtResource("18_dp3eg")
+flat = true
+
+[node name="button_newGame" type="Button" parent="UI_buttons/ui_pause"]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 70.0
+offset_right = 195.0
+offset_bottom = 123.0
+text = "New Game"
+icon = ExtResource("18_dp3eg")
+flat = true
+
+[node name="Label" type="Label" parent="UI_buttons/ui_pause"]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 17.0
+offset_right = 215.0
+offset_bottom = 43.0
+theme_override_font_sizes/font_size = 18
+text = "Freelance President"
+
+[node name="Label2" type="Label" parent="UI_buttons/ui_pause"]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 49.0
+offset_right = 248.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 10
+text = "made by Ryan and Edan 
+with love and care"
+
+[node name="ui_end" type="Control" parent="UI_buttons"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -101.0
+offset_top = -112.0
+offset_right = -61.0
+offset_bottom = -72.0
+script = ExtResource("16_dp3eg")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UI_buttons/ui_end"]
+layout_mode = 0
+offset_right = 258.0
+offset_bottom = 184.0
+texture = ExtResource("17_muem4")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="button_newGame" type="Button" parent="UI_buttons/ui_end"]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 115.0
+offset_right = 195.0
+offset_bottom = 168.0
+text = "New Game"
+icon = ExtResource("18_dp3eg")
+flat = true
+
+[node name="Label" type="Label" parent="UI_buttons/ui_end"]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 17.0
+offset_right = 215.0
+offset_bottom = 43.0
+theme_override_font_sizes/font_size = 18
+text = "Freelance President"
+
+[node name="Label2" type="Label" parent="UI_buttons/ui_end"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 60.0
+offset_right = 234.0
+offset_bottom = 91.0
+theme_override_font_sizes/font_size = 10
+text = "Congratulations! 
+You been through eight bills as a president!"
+horizontal_alignment = 1
+
+[node name="GameManager" type="Node2D" parent="."]
+script = ExtResource("11_ya4ey")
+
+[node name="UI_Bills" type="Node2D" parent="."]
+
+[node name="ui_bill1" type="Control" parent="UI_Bills"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -101.0
+offset_top = -112.0
+offset_right = -61.0
+offset_bottom = -72.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UI_Bills/ui_bill1"]
+layout_mode = 0
+offset_right = 258.0
+offset_bottom = 184.0
+texture = ExtResource("17_muem4")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="button_approve_bill1" type="Button" parent="UI_Bills/ui_bill1"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 138.0
+offset_right = 122.0
+offset_bottom = 178.0
+text = "Approve"
+icon = ExtResource("18_dp3eg")
+flat = true
+
+[node name="button_deny_bill1" type="Button" parent="UI_Bills/ui_bill1"]
+layout_mode = 0
+offset_left = 143.0
+offset_top = 138.0
+offset_right = 252.0
+offset_bottom = 178.0
+text = "Deny"
+icon = ExtResource("18_dp3eg")
+flat = true
+
+[node name="Label" type="Label" parent="UI_Bills/ui_bill1"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 8.0
+offset_right = 52.0
+offset_bottom = 31.0
+text = "Ban on Plastic Bags"
+
+[node name="Label2" type="Label" parent="UI_Bills/ui_bill1"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 39.0
+offset_right = 55.0
+offset_bottom = 62.0
+theme_override_font_sizes/font_size = 9
+text = "Description:
+A proposal to phase out single-use plastic bags in favor 
+of biodegradable alternatives. Environmental groups 
+applaud the move, but manufacturers warn of higher 
+production costs."
+
+[node name="ui_bill2" type="Control" parent="UI_Bills"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -101.0
+offset_top = -112.0
+offset_right = -61.0
+offset_bottom = -72.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UI_Bills/ui_bill2"]
+layout_mode = 0
+offset_right = 258.0
+offset_bottom = 184.0
+texture = ExtResource("17_muem4")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="button_approve_bill2" type="Button" parent="UI_Bills/ui_bill2"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 138.0
+offset_right = 122.0
+offset_bottom = 178.0
+text = "Approve"
+icon = ExtResource("18_dp3eg")
+flat = true
+
+[node name="button_deny_bill2" type="Button" parent="UI_Bills/ui_bill2"]
+layout_mode = 0
+offset_left = 143.0
+offset_top = 138.0
+offset_right = 252.0
+offset_bottom = 178.0
+text = "Deny"
+icon = ExtResource("18_dp3eg")
+flat = true
+
+[node name="Label" type="Label" parent="UI_Bills/ui_bill2"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 8.0
+offset_right = 52.0
+offset_bottom = 31.0
+text = "University Tuition Relief Act"
+
+[node name="Label2" type="Label" parent="UI_Bills/ui_bill2"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 39.0
+offset_right = 55.0
+offset_bottom = 62.0
+theme_override_font_sizes/font_size = 9
+text = "Description:
+A reform to reduce tuition fees and provide tax breaks 
+for students. Popular with young voters, but it will 
+strain the national budget."
+
+[node name="ui_bill3" type="Control" parent="UI_Bills"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -101.0
+offset_top = -112.0
+offset_right = -61.0
+offset_bottom = -72.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UI_Bills/ui_bill3"]
+layout_mode = 0
+offset_right = 258.0
+offset_bottom = 184.0
+texture = ExtResource("17_muem4")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="button_approve_bill3" type="Button" parent="UI_Bills/ui_bill3"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 138.0
+offset_right = 122.0
+offset_bottom = 178.0
+text = "Approve"
+icon = ExtResource("18_dp3eg")
+flat = true
+
+[node name="button_deny_bill3" type="Button" parent="UI_Bills/ui_bill3"]
+layout_mode = 0
+offset_left = 143.0
+offset_top = 138.0
+offset_right = 252.0
+offset_bottom = 178.0
+text = "Deny"
+icon = ExtResource("18_dp3eg")
+flat = true
+
+[node name="Label" type="Label" parent="UI_Bills/ui_bill3"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 8.0
+offset_right = 52.0
+offset_bottom = 31.0
+text = "Minimum Wage Increase"
+
+[node name="Label2" type="Label" parent="UI_Bills/ui_bill3"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 39.0
+offset_right = 55.0
+offset_bottom = 62.0
+theme_override_font_sizes/font_size = 9
+text = "Description:
+Raises the minimum wage nationwide. Workers rejoice, 
+but small businesses warn it could lead to layoffs and 
+inflation."
+
+[node name="ui_bill4" type="Control" parent="UI_Bills"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -101.0
+offset_top = -112.0
+offset_right = -61.0
+offset_bottom = -72.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UI_Bills/ui_bill4"]
+layout_mode = 0
+offset_right = 258.0
+offset_bottom = 184.0
+texture = ExtResource("17_muem4")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="button_approve_bill4" type="Button" parent="UI_Bills/ui_bill4"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 138.0
+offset_right = 122.0
+offset_bottom = 178.0
+text = "Approve"
+icon = ExtResource("18_dp3eg")
+flat = true
+
+[node name="button_deny_bill4" type="Button" parent="UI_Bills/ui_bill4"]
+layout_mode = 0
+offset_left = 143.0
+offset_top = 138.0
+offset_right = 252.0
+offset_bottom = 178.0
+text = "Deny"
+icon = ExtResource("18_dp3eg")
+flat = true
+
+[node name="Label" type="Label" parent="UI_Bills/ui_bill4"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 8.0
+offset_right = 52.0
+offset_bottom = 31.0
+text = "National Surveillance Act"
+
+[node name="Label2" type="Label" parent="UI_Bills/ui_bill4"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 39.0
+offset_right = 55.0
+offset_bottom = 62.0
+theme_override_font_sizes/font_size = 9
+text = "Description:
+Allows intelligence agencies expanded access to digital 
+communications in the name of security. Critics call it 
+an invasion of privacy."
+
+[node name="ui_bill5" type="Control" parent="UI_Bills"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -101.0
+offset_top = -112.0
+offset_right = -61.0
+offset_bottom = -72.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UI_Bills/ui_bill5"]
+layout_mode = 0
+offset_right = 258.0
+offset_bottom = 184.0
+texture = ExtResource("17_muem4")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="button_approve_bill5" type="Button" parent="UI_Bills/ui_bill5"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 138.0
+offset_right = 122.0
+offset_bottom = 178.0
+text = "Approve"
+icon = ExtResource("18_dp3eg")
+flat = true
+
+[node name="button_deny_bill5" type="Button" parent="UI_Bills/ui_bill5"]
+layout_mode = 0
+offset_left = 143.0
+offset_top = 138.0
+offset_right = 252.0
+offset_bottom = 178.0
+text = "Deny"
+icon = ExtResource("18_dp3eg")
+flat = true
+
+[node name="Label" type="Label" parent="UI_Bills/ui_bill5"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 8.0
+offset_right = 52.0
+offset_bottom = 31.0
+text = "Universal Healthcare Act"
+
+[node name="Label2" type="Label" parent="UI_Bills/ui_bill5"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 39.0
+offset_right = 55.0
+offset_bottom = 62.0
+theme_override_font_sizes/font_size = 9
+text = "Description:
+A sweeping healthcare reform providing medical 
+coverage for all citizens. Hugely popular, but very 
+expensive to maintain."
+
+[node name="ui_bill6" type="Control" parent="UI_Bills"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -101.0
+offset_top = -112.0
+offset_right = -61.0
+offset_bottom = -72.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UI_Bills/ui_bill6"]
+layout_mode = 0
+offset_right = 258.0
+offset_bottom = 184.0
+texture = ExtResource("17_muem4")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="button_approve_bill6" type="Button" parent="UI_Bills/ui_bill6"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 138.0
+offset_right = 122.0
+offset_bottom = 178.0
+text = "Approve"
+icon = ExtResource("18_dp3eg")
+flat = true
+
+[node name="button_deny_bill6" type="Button" parent="UI_Bills/ui_bill6"]
+layout_mode = 0
+offset_left = 143.0
+offset_top = 138.0
+offset_right = 252.0
+offset_bottom = 178.0
+text = "Deny"
+icon = ExtResource("18_dp3eg")
+flat = true
+
+[node name="Label" type="Label" parent="UI_Bills/ui_bill6"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 8.0
+offset_right = 52.0
+offset_bottom = 31.0
+text = "Media Regulation Reform"
+
+[node name="Label2" type="Label" parent="UI_Bills/ui_bill6"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 39.0
+offset_right = 55.0
+offset_bottom = 62.0
+theme_override_font_sizes/font_size = 9
+text = "Description:
+A controversial law to restrict misinformation and 
+regulate online media outlets. Supporters say it 
+protects truth; opponents call it censorship."
+
+[node name="ui_bill7" type="Control" parent="UI_Bills"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -101.0
+offset_top = -112.0
+offset_right = -61.0
+offset_bottom = -72.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UI_Bills/ui_bill7"]
+layout_mode = 0
+offset_right = 258.0
+offset_bottom = 184.0
+texture = ExtResource("17_muem4")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="button_approve_bill7" type="Button" parent="UI_Bills/ui_bill7"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 138.0
+offset_right = 122.0
+offset_bottom = 178.0
+text = "Approve"
+icon = ExtResource("18_dp3eg")
+flat = true
+
+[node name="button_deny_bill7" type="Button" parent="UI_Bills/ui_bill7"]
+layout_mode = 0
+offset_left = 143.0
+offset_top = 138.0
+offset_right = 252.0
+offset_bottom = 178.0
+text = "Deny"
+icon = ExtResource("18_dp3eg")
+flat = true
+
+[node name="Label" type="Label" parent="UI_Bills/ui_bill7"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 8.0
+offset_right = 52.0
+offset_bottom = 31.0
+text = "Foreign Affairs Expansion Act"
+
+[node name="Label2" type="Label" parent="UI_Bills/ui_bill7"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 39.0
+offset_right = 55.0
+offset_bottom = 62.0
+theme_override_font_sizes/font_size = 9
+text = "Description:
+Expands international aid and overseas military 
+presence. Improves diplomatic influence, but drains 
+resources and heightens global tension."
+
+[node name="ui_bill8" type="Control" parent="UI_Bills"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -101.0
+offset_top = -112.0
+offset_right = -61.0
+offset_bottom = -72.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UI_Bills/ui_bill8"]
+layout_mode = 0
+offset_right = 258.0
+offset_bottom = 184.0
+texture = ExtResource("17_muem4")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="button_approve_bill8" type="Button" parent="UI_Bills/ui_bill8"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 138.0
+offset_right = 122.0
+offset_bottom = 178.0
+text = "Approve"
+icon = ExtResource("18_dp3eg")
+flat = true
+
+[node name="button_deny_bill8" type="Button" parent="UI_Bills/ui_bill8"]
+layout_mode = 0
+offset_left = 143.0
+offset_top = 138.0
+offset_right = 252.0
+offset_bottom = 178.0
+text = "Deny"
+icon = ExtResource("18_dp3eg")
+flat = true
+
+[node name="Label" type="Label" parent="UI_Bills/ui_bill8"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 8.0
+offset_right = 52.0
+offset_bottom = 31.0
+text = "Nuclear Arsenal Expansion Act"
+
+[node name="Label2" type="Label" parent="UI_Bills/ui_bill8"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 39.0
+offset_right = 55.0
+offset_bottom = 62.0
+theme_override_font_sizes/font_size = 9
+text = "Description:
+A final, world-altering decision: massively expand the 
+nation’s nuclear stockpile to deter foreign aggression. 
+The cost is staggering — and the risk of global 
+catastrophe looms large."
+
+[node name="BillTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[connection signal="area_clicked" from="buttons/button_stats/area2D_button_stats" to="GameManager" method="_on_button_stats_clicked"]
+[connection signal="input_event" from="buttons/button_stats/area2D_button_stats" to="buttons/button_stats/area2D_button_stats" method="_on_input_event"]
+[connection signal="area_clicked" from="buttons/button_advancement/area2D_button_advancement" to="GameManager" method="_on_button_advancement_clicked"]
+[connection signal="input_event" from="buttons/button_advancement/area2D_button_advancement" to="buttons/button_advancement/area2D_button_advancement" method="_on_input_event"]
+[connection signal="area_clicked" from="buttons/button_pause/area2D_button_pause" to="GameManager" method="_on_button_pause_clicked"]
+[connection signal="input_event" from="buttons/button_pause/area2D_button_pause" to="buttons/button_pause/area2D_button_pause" method="_on_input_event"]
+[connection signal="area_clicked" from="buttons/button_bills/area2D_button_bills" to="GameManager" method="_on_button_bills_clicked"]
+[connection signal="input_event" from="buttons/button_bills/area2D_button_bills" to="buttons/button_bills/area2D_button_bills" method="_on_input_event"]
+[connection signal="pressed" from="UI_buttons/ui_pause/button_resume" to="GameManager" method="_on_button_resume_pressed"]
+[connection signal="bill_notif" from="GameManager" to="buttons/button_bills/area2D_button_bills" method="_on_bill_notif"]
+[connection signal="bill_notif_clear" from="GameManager" to="buttons/button_bills/area2D_button_bills" method="_on_notif_clear"]
+[connection signal="pressed" from="UI_Bills/ui_bill1/button_approve_bill1" to="GameManager" method="_on_button_approve_bill_1_pressed"]
+[connection signal="pressed" from="UI_Bills/ui_bill1/button_deny_bill1" to="GameManager" method="_on_button_deny_bill_1_pressed"]
+[connection signal="pressed" from="UI_Bills/ui_bill2/button_approve_bill2" to="GameManager" method="_on_button_approve_bill_2_pressed"]
+[connection signal="pressed" from="UI_Bills/ui_bill2/button_deny_bill2" to="GameManager" method="_on_button_deny_bill_2_pressed"]
+[connection signal="pressed" from="UI_Bills/ui_bill3/button_approve_bill3" to="GameManager" method="_on_button_approve_bill_3_pressed"]
+[connection signal="pressed" from="UI_Bills/ui_bill3/button_deny_bill3" to="GameManager" method="_on_button_deny_bill_3_pressed"]
+[connection signal="pressed" from="UI_Bills/ui_bill4/button_approve_bill4" to="GameManager" method="_on_button_approve_bill_4_pressed"]
+[connection signal="pressed" from="UI_Bills/ui_bill4/button_deny_bill4" to="GameManager" method="_on_button_deny_bill_4_pressed"]
+[connection signal="pressed" from="UI_Bills/ui_bill5/button_approve_bill5" to="GameManager" method="_on_button_approve_bill_5_pressed"]
+[connection signal="pressed" from="UI_Bills/ui_bill5/button_deny_bill5" to="GameManager" method="_on_button_deny_bill_5_pressed"]
+[connection signal="pressed" from="UI_Bills/ui_bill6/button_approve_bill6" to="GameManager" method="_on_button_approve_bill_6_pressed"]
+[connection signal="pressed" from="UI_Bills/ui_bill6/button_deny_bill6" to="GameManager" method="_on_button_deny_bill_6_pressed"]
+[connection signal="pressed" from="UI_Bills/ui_bill7/button_approve_bill7" to="GameManager" method="_on_button_approve_bill_7_pressed"]
+[connection signal="pressed" from="UI_Bills/ui_bill7/button_deny_bill7" to="GameManager" method="_on_button_deny_bill_7_pressed"]
+[connection signal="pressed" from="UI_Bills/ui_bill8/button_approve_bill8" to="GameManager" method="_on_button_approve_bill_8_pressed"]
+[connection signal="pressed" from="UI_Bills/ui_bill8/button_deny_bill8" to="GameManager" method="_on_button_deny_bill_8_pressed"]
+[connection signal="timeout" from="BillTimer" to="GameManager" method="_on_bill_timer_timeout"]
